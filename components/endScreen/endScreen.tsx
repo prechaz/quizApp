@@ -5,11 +5,12 @@ import congrat from '../../public/congrats.png'
 
 type Props =  {
     score: number ;
-    Quiz: unknown[]
+    Quiz: unknown[];
+    onTryAgain : ()=> void
 }
 
 
-export default function EndScreen({score,Quiz}:Props) {
+export default function EndScreen({score,Quiz, onTryAgain}:Props) {
   return (
     <div>
           <div className="text-center bg-[#51486877] py-12 text-[#f5f5f5]">
@@ -23,7 +24,7 @@ export default function EndScreen({score,Quiz}:Props) {
           <p className="text-md">
             Percentage: {Math.round((score / Quiz.length) * 100)}%
           </p>
-          <button className='bg-gradient py-2 px-10 mt-3 rounded'>Try Again</button>
+          <button onClick={onTryAgain} className='bg-gradient py-2 px-10 mt-3 rounded cursor-pointer'>Try Again</button>
         </div>
     </div>
   )

@@ -9,6 +9,7 @@ import EndScreen from "../endScreen/endScreen";
 
 type Props = {
   selectedDifficulty: string;
+    onTryAgain : ()=> void
 };
 
 // Function to randomly select and shuffle questions
@@ -16,7 +17,7 @@ function getRandomQuestions<T>(questions: T[], count: number): T[] {
   return [...questions].sort(() => Math.random() - 0.5).slice(0, count);
 }
 
-export default function QuizGame({ selectedDifficulty }: Props) {
+export default function QuizGame({ selectedDifficulty,   onTryAgain }: Props) {
   // Filter questions based on selected difficulty level and get random questions ONCE
   const [Quiz] = useState(() => {
     const FilteredQuestion = bibleQuiz.filter(
@@ -131,7 +132,7 @@ export default function QuizGame({ selectedDifficulty }: Props) {
       
       {/* Conditional rendering: show results or current question */}
       {showResult ? (
-       <EndScreen score={score} Quiz={Quiz} />
+       <EndScreen score={score} Quiz={Quiz} onTryAgain={onTryAgain} />
       ) : (
         <div className="bg-[#51486877] shadow-2xs py-12">
           <div className="w-[400px] m-auto flex flex-col gap-6">
