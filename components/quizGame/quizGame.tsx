@@ -134,8 +134,8 @@ export default function QuizGame({ selectedDifficulty,   onTryAgain }: Props) {
       {showResult ? (
        <EndScreen score={score} Quiz={Quiz} onTryAgain={onTryAgain} />
       ) : (
-        <div className="bg-[#51486877] shadow-2xs py-12">
-          <div className="w-[400px] m-auto flex flex-col gap-6">
+        <div className="bg-[#51486877] shadow-2xs py-12 px-1">
+          <div className="w-[340px] md:w-[400px] m-auto flex flex-col gap-6">
             {/* Question navigation dots */}
             <div className="flex items-center justify-between gap-2">
               {Quiz.map((_, i) => (
