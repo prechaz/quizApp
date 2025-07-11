@@ -65,7 +65,7 @@ export default function OnStartScreen({onStart}: Props) {
                         ].map(({ level, desc, icon }) => (
                             // Individual difficulty card
                             <div key={level}
-                                onClick={() => setDifficulty(level as any)} // Set selected difficulty on click
+                                onClick={() => setDifficulty(level as 'easy'|'medium'|"hard")} // Set selected difficulty on click
                                 className={`p-3 sm:p-4 rounded-xl cursor-pointer transition-all duration-300 border-2 ${
                                     difficulty === level 
                                         ? 'bg-blue-600 border-blue-500 shadow-2xl transform scale-105' // Selected state styling
