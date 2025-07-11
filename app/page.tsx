@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
 
-    <div className="w-full md:w-[500px] py-3 m-auto rounded-[5px]">
+    <div className="w-full md:w-[600px] py-3 m-auto rounded-[5px]">
       {
         !difficulty ? (<div className="bg-[#a3a0a031] py-3 "><OnStartScreen onStart={setDifficulty}/></div>):(<QuizGame selectedDifficulty={difficulty} onTryAgain={handleTryAgain}/>)
       }

@@ -136,8 +136,8 @@ export default function QuizGame({ selectedDifficulty, onTryAgain }: Props) {
       {showResult ? (
         <EndScreen score={score} Quiz={Quiz} onTryAgain={onTryAgain} />
       ) : (
-        <div className="bg-[#51486877] shadow-2xs py-12 px-1">
-          <div className="w-[360px] md:w-[450px] m-auto flex flex-col gap-6">
+        <div className="bg-[#51486877] shadow-2xs py-12 px-2">
+          <div className="w-full md:w-[450px] m-auto flex flex-col gap-6">
             {/* Question navigation dots */}
             <div className="flex items-center justify-center gap-2 flex-wrap">
               {Quiz.map((_, i) => (
@@ -172,14 +172,14 @@ export default function QuizGame({ selectedDifficulty, onTryAgain }: Props) {
                 </h2>
 
                 {/* Answer options in a 2x2 grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 w-full">
                   {Quiz[current].options.map((option, id) => (
                     <button
                       key={id}
                       onClick={() => handleAnswer(option)}
                       disabled={isAnswering} // Disable button while processing answer
                       style={getStyle(option)} // Apply dynamic styling
-                      className={`bg-[#f5f5f52a] py-4 rounded hover:bg-[#f5f5f550] transition-colors text-[#f5f5f5] font-normal flex items-center justify-center max-w-[350px] ${
+                      className={`bg-[#f5f5f52a] py-4 rounded hover:bg-[#f5f5f550] transition-colors text-[#f5f5f5] font-normal flex items-center justify-center ${
                         isAnswering
                           ? "cursor-not-allowed opacity-75"
                           : "cursor-pointer"
