@@ -20,9 +20,9 @@ export default function OnStartScreen({onStart}: Props) {
 
     return (
         // Main container - full screen height with proper overflow handling
-        <div className='h-screen flex items-center justify-center p-4 overflow-hidden'>
+        <div className='flex items-center justify-center p-4 overflow-hidden'>
             {/* Inner container with max width and full width */}
-            <div className='max-w-md w-full flex flex-col justify-center h-full max-h-screen'>
+            <div className='max-w-md w-full flex flex-col justify-center h-full '>
                 
                 {/* Header Section */}
                 <div className='text-center mb-4 sm:mb-6'>
