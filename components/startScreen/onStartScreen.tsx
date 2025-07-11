@@ -11,7 +11,6 @@ import bible from '../../public/premium_vector-1746731652226-4826971b7cb2-remove
 // Define the props type for the component
 type Props = {
     onStart: (difficulty: 'easy' | 'medium' | 'hard') => void
-    onTryAgain : ()=> void
 }
 
 // Main component for the quiz start screen
