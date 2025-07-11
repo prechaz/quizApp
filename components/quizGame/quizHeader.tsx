@@ -1,7 +1,8 @@
+import { Question } from '@/type';
 import React from 'react'
 type Props = {
     score: number;
-    quiz: string[];
+    quiz: Question[];
 }
 export default function QuizHeader({score, quiz}:Props) {
   return (
